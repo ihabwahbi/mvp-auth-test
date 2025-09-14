@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         <h1>Authentication Test - Azure AD with Allowlist</h1>
         <p style={{ marginBottom: "2rem" }}>You are not signed in.</p>
         <button
-          onClick={() => signIn('azure-ad')}
+          onClick={() => signIn(process.env.NODE_ENV === 'development' ? 'mock-credentials' : 'azure-ad')}
           style={{
             padding: "0.75rem 1.5rem",
             fontSize: "1rem",
